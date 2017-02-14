@@ -43,4 +43,5 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br><a href="https://community.hortonworks.com/questions/35539/snapshots-backup-and-dr.html">Article - Snapshots Backup and DR</a>
 <br><a href="http://hortonworks.com/hadoop-tutorial/incremental-backup-data-hdp-azure-disaster-recovery-burst-capacity/">Tutorial - Incremental Backup to Azure DR Burst Capacity</a>
 <br><a href="http://hortonworks.com/hadoop-tutorial/mirroring-datasets-between-hadoop-clusters-with-apache-falcon/">Tutorial - Mirroring Datasets between Hadoop Clusters with Falcon</a>
+<br><a href="https://github.com/hortonworks/tutorials-future/blob/master/tutorials/hortonworks/create-falcon-cluster-hdp2.5/tutorial.md">Tutorial - Create Falcon Cluster HDP2.5</a>
 <br>
