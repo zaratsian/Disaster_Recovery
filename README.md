@@ -17,7 +17,6 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br>1.) Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-hdfs/HdfsSnapshots.html">HDFS Snapshots</a> (since Hive is stored in HDFS)
 <br>&nbsp;&bull; Hive data is stored in HDFS, so your HDFS DR strategy could be used for Hive as well. 
 <br>&nbsp;&bull; Use snapshot feature in HDFS to take a point in time image. 
-<br>Syntax: hdfs snapshotDiff /path/to/directory_or_file snapshot1 snapshot2
 <br>
 <br>2.) Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-distcp/DistCp.html">Distcp</a> as part of custom pipeline
 <br>
@@ -35,3 +34,5 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br><a href="https://community.hortonworks.com/articles/63379/hdfs-snapshots-based-replication-using-apache-falc.html">Article - HDFS Snapshot Replication using Falcon</a>
 <br><a href="https://community.hortonworks.com/questions/35539/snapshots-backup-and-dr.html">Article - Snapshots Backup and DR</a>
 <br><a href="http://hortonworks.com/hadoop-tutorial/incremental-backup-data-hdp-azure-disaster-recovery-burst-capacity/">Tutorial - Incremental Backup to Azure DR Burst Capacity</a>
+<br><a href="http://hortonworks.com/hadoop-tutorial/mirroring-datasets-between-hadoop-clusters-with-apache-falcon/">Tutorial - Mirroring Datasets between Hadoop Clusters with Falcon</a>
+<br>
