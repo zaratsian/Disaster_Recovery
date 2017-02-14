@@ -11,12 +11,13 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br>
 <br>Option #2: Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-distcp/DistCp.html">Distcp</a> as part of custom pipeline
 <br>
-<br>Option #3:
+<br>Option #3: Use <a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.5.3/bk_data-movement-and-integration/content/ch_mirroring_on-prem.html">Falcon Data Mirroring</a>
 <br>
-<br>Option #4:
+<br>Option #4: Use two jobs, one to feed the primary cluster, and another to feed the DR cluster. (i.e. 2 Sqoop jobs)
 <br>
 <br>
 <br><b>References:</b>
 <br><a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.5.3/bk_data-movement-and-integration/content/ch_disaster_recovery_falcon.html">Hortonworks HDP 2.5.3 - Configuring for Disaster Recovery</a>
 <br><a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.5.3/bk_data-movement-and-integration/content/ch_mirroring_on-prem.html">Hortonworks HDP 2.5.3 - Mirroring Data with Apache Falcon</a>
 <br><a href="https://community.hortonworks.com/articles/71775/managing-hadoop-dr-with-distcp-and-snapshots.html">Article - Managing Hadoop DR with Distcp and Snapshots</a>
+<br><a href="https://community.hortonworks.com/questions/394/what-are-best-practices-for-setting-up-backup-and.html">Article - Best practices for setting up Backup and Disaster Recovery for Hive in production</a>
