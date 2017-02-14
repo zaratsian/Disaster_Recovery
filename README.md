@@ -1,6 +1,7 @@
 <h3>Hadoop Cluster - Disaster_Recovery</h3>
 Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop clusters
 <br>
+<br>
 <br><b>HDFS - DR Best Practices & Strategies:</b>
 <br>
 <br>Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-hdfs/HdfsSnapshots.html">HDFS Snapshots</a>:
@@ -9,7 +10,14 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br>&nbsp;&bull; Blocks in datanodes are not copied: snapshot files record the block list and file size. There's no data copying
 <br>&nbsp;&bull; Snapshots do not adversely affect regular HDFS operations.
 <br>&nbsp;&bull; Incremental snapshots can be taken by doing a diff between two snapshots.
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Syntax:</b> hdfs snapshotDiff /path/to/directory_or_file fromSnapshot toSnapshot
+<br>
+<br><b>Snapshot Syntax:</b> 
+<br>Allow Snapshot:&nbsp;&nbsp; hdfs dfsadmin -allowSnapshot <path>
+<br>Disallow Snapshot: hdfs dfsadmin -disallowSnapshot <path>
+<br>Create Snapsnot:&nbsp; hdfs dfs -createSnapshot <path> [<snapshotName>]
+<br>Delete Snapshot:&nbsp; hdfs dfs -deleteSnapshot <path> <snapshotName>
+<br>Snapshot Dir List: hdfs lsSnapshottableDir
+<br>Snapshot Diff:&nbsp;&nbsp;&nbsp; hdfs snapshotDiff /path/to/directory_or_file fromSnapshot toSnapshot
 <br>
 <br>
 <br><b>Hive - DR Best Practices & Strategies:</b>
