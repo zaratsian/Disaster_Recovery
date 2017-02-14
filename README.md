@@ -3,22 +3,25 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br>
 <br><b>HDFS - DR Best Practices & Strategies:</b>
 <br>
-<br>Use HDFS Snapshots:
-<br>&nbsp;&bull; Snapshots do not create extra copies of blocks on the file system. 
-<br>&nbsp;&bull; Snapshots are stored along with the NameNode’s file system namespace.
+<br>Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-hdfs/HdfsSnapshots.html">HDFS Snapshots</a>:
+<br>&nbsp;&bull; HDFS Snapshots are read-only point-in-time copies of the file system. 
+<br>&nbsp;&bull; Snapshots can be taken on a subtree of the file system or the entire file system.
+<br>&nbsp;&bull; Blocks in datanodes are not copied: snapshot files record the block list and file size. There's no data copying
+<br>&nbsp;&bull; Snapshots do not adversely affect regular HDFS operations
 <br>
 <br>
 <br><b>Hive - DR Best Practices & Strategies:</b>
 <br>
-<br>Option #1: Use HDFS Snapshots (since Hive is stored in HDFS)
-<br>Hive data gets stored in HDFS, so any backup or DR (Disaster Recovery) strategy you have for HDFS could be used for Hive as well. Use snapshot feature in HDFS to take a point in time image. These snapshots could be for entire file system, a sub-tree in a file system or an individual file. You can also take incremental snapshots by doing a diff between two snapshots.
+<br>1.) Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-hdfs/HdfsSnapshots.html">HDFS Snapshots</a> (since Hive is stored in HDFS)
+<br>&nbsp;&bull; Hive data is stored in HDFS, so your HDFS DR strategy could be used for Hive as well. 
+<br>&nbsp;&bull; Use snapshot feature in HDFS to take a point in time image. These snapshots could be for entire file system, a sub-tree in a file system or an individual file. You can also take incremental snapshots by doing a diff between two snapshots.
 <br>Syntax: hdfs snapshotDiff /path/to/directory_or_file snapshot1 snapshot2
 <br>
-<br>Option #2: Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-distcp/DistCp.html">Distcp</a> as part of custom pipeline
+<br>2.) Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-distcp/DistCp.html">Distcp</a> as part of custom pipeline
 <br>
-<br>Option #3: Use <a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.5.3/bk_data-movement-and-integration/content/ch_mirroring_on-prem.html">Falcon Data Mirroring</a>
+<br>3.) Use <a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.5.3/bk_data-movement-and-integration/content/ch_mirroring_on-prem.html">Falcon Data Mirroring</a>
 <br>
-<br>Option #4: Use two jobs, one to feed the primary cluster, and another to feed the DR cluster. (i.e. 2 Sqoop jobs)
+<br>4.) Use two jobs, one to feed the primary cluster, and another to feed the DR cluster. (i.e. 2 Sqoop jobs)
 <br>
 <br>
 <br><b>References:</b>
