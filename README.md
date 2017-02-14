@@ -5,26 +5,26 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br><b>HDFS - DR Best Practices & Strategies:</b>
 <br>
 <br>Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-hdfs/HdfsSnapshots.html">HDFS Snapshots</a>:
-<br>&nbsp;&bull; HDFS Snapshots are read-only point-in-time copies of the file system. 
-<br>&nbsp;&bull; Snapshots can be taken on a subtree of the file system, a file, or the entire file system.
-<br>&nbsp;&bull; Blocks in datanodes are not copied: snapshot files record the block list and file size. There's no data copying
-<br>&nbsp;&bull; Snapshots do not adversely affect regular HDFS operations.
-<br>&nbsp;&bull; Incremental snapshots can be taken by doing a diff between two snapshots.
+<br>&nbsp;&nbsp;&nbsp;&bull; HDFS Snapshots are read-only point-in-time copies of the file system. 
+<br>&nbsp;&nbsp;&nbsp;&bull; Snapshots can be taken on a subtree of the file system, a file, or the entire file system.
+<br>&nbsp;&nbsp;&nbsp;&bull; Blocks in datanodes are not copied: snapshot files record the block list and file size. There's no data copying
+<br>&nbsp;&nbsp;&nbsp;&bull; Snapshots do not adversely affect regular HDFS operations.
+<br>&nbsp;&nbsp;&nbsp;&bull; Incremental snapshots can be taken by doing a diff between two snapshots.
 <br>
 <br><b>Snapshot Syntax:</b> 
-<br>Allow Snapshot: hdfs dfsadmin -allowSnapshot /path/to/directory_or_file
-<br>Disallow Snapshot: hdfs dfsadmin -disallowSnapshot /path/to/directory_or_file
-<br>Create Snapsnot: hdfs dfs -createSnapshot /path/to/directory_or_file snapshotName
-<br>Delete Snapshot: hdfs dfs -deleteSnapshot /path/to/directory_or_file snapshotName
-<br>Snapshot List: hdfs lsSnapshottableDir
-<br>Snapshot Diff: hdfs snapshotDiff /path/to/directory_or_file fromSnapshot toSnapshot
+<br>&nbsp;&nbsp;&nbsp;&bull; Allow Snapshot: hdfs dfsadmin -allowSnapshot /path/to/directory_or_file
+<br>&nbsp;&nbsp;&nbsp;&bull; Disallow Snapshot: hdfs dfsadmin -disallowSnapshot /path/to/directory_or_file
+<br>&nbsp;&nbsp;&nbsp;&bull; Create Snapsnot: hdfs dfs -createSnapshot /path/to/directory_or_file snapshotName
+<br>&nbsp;&nbsp;&nbsp;&bull; Delete Snapshot: hdfs dfs -deleteSnapshot /path/to/directory_or_file snapshotName
+<br>&nbsp;&nbsp;&nbsp;&bull; Snapshot List: hdfs lsSnapshottableDir
+<br>&nbsp;&nbsp;&nbsp;&bull; Snapshot Diff: hdfs snapshotDiff /path/to/directory_or_file fromSnapshot toSnapshot
 <br>
 <br>
 <br><b>Hive - DR Best Practices & Strategies:</b>
 <br>
 <br>1.) Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-hdfs/HdfsSnapshots.html">HDFS Snapshots</a> (since Hive is stored in HDFS)
-<br>&nbsp;&bull; Hive data is stored in HDFS, so your HDFS DR strategy could be used for Hive as well. 
-<br>&nbsp;&bull; Use snapshot feature in HDFS to take a point in time image. 
+<br>&nbsp;&nbsp;&nbsp;&bull; Hive data is stored in HDFS, so your HDFS DR strategy could be used for Hive as well. 
+<br>&nbsp;&nbsp;&nbsp;&bull; Use snapshot feature in HDFS to take a point in time image. 
 <br>
 <br>2.) Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-distcp/DistCp.html">Distcp</a> as part of custom pipeline
 <br>
