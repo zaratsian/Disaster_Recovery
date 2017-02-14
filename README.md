@@ -12,12 +12,12 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br>&nbsp;&bull; Incremental snapshots can be taken by doing a diff between two snapshots.
 <br>
 <br><b>Snapshot Syntax:</b> 
-<br>Allow Snapshot:&nbsp;&nbsp; hdfs dfsadmin -allowSnapshot <path>
-<br>Disallow Snapshot: hdfs dfsadmin -disallowSnapshot <path>
-<br>Create Snapsnot:&nbsp; hdfs dfs -createSnapshot <path> [<snapshotName>]
-<br>Delete Snapshot:&nbsp; hdfs dfs -deleteSnapshot <path> <snapshotName>
-<br>Snapshot Dir List: hdfs lsSnapshottableDir
-<br>Snapshot Diff:&nbsp;&nbsp;&nbsp; hdfs snapshotDiff /path/to/directory_or_file fromSnapshot toSnapshot
+<br>Allow Snapshot: hdfs dfsadmin -allowSnapshot /path/to/directory_or_file
+<br>Disallow Snapshot: hdfs dfsadmin -disallowSnapshot /path/to/directory_or_file
+<br>Create Snapsnot: hdfs dfs -createSnapshot /path/to/directory_or_file snapshotName
+<br>Delete Snapshot: hdfs dfs -deleteSnapshot /path/to/directory_or_file snapshotName
+<br>Snapshot List: hdfs lsSnapshottableDir
+<br>Snapshot Diff: hdfs snapshotDiff /path/to/directory_or_file fromSnapshot toSnapshot
 <br>
 <br>
 <br><b>Hive - DR Best Practices & Strategies:</b>
