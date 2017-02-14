@@ -2,7 +2,7 @@
 Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop clusters
 <br>
 <br>
-<br><b>HDFS - DR Best Practices & Strategies:</b>
+<br><h3>HDFS - DR Best Practices & Strategies:</h3>
 <br>
 <br>Option (1): Mirror Data using Apache Falcon (<a href="http://hortonworks.com/hadoop-tutorial/mirroring-datasets-between-hadoop-clusters-with-apache-falcon/">Tutorial</a>, <a href="http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.5.3/bk_data-movement-and-integration/content/ch_mirroring_on-prem.html">Documentation</a>)
 <br>Mirroring data produces an exact copy of the data and keeps both copies synchronized.
@@ -26,8 +26,8 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br>&nbsp;&nbsp;&nbsp;&bull; Snapshot Diff: hdfs snapshotDiff /path/to/directory_or_file fromSnapshot toSnapshot
 <br>
 <br>
-<br><b>Hive - DR Best Practices & Strategies:</b>
-<br>
+<br><h3>Hive - DR Best Practices & Strategies:</h3>
+
 <br>Option (1): Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-hdfs/HdfsSnapshots.html">HDFS Snapshots</a> (since Hive is stored in HDFS)
 <br>&nbsp;&nbsp;&nbsp;&bull; Hive data is stored in HDFS, so your HDFS DR strategy could be used for Hive as well. 
 <br>&nbsp;&nbsp;&nbsp;&bull; Use snapshot feature in HDFS to take a point in time image. 
