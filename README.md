@@ -4,8 +4,9 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br><b>HDFS - DR Best Practices & Strategies:</b>
 <br>
 <br>Use HDFS Snapshots:
-<br>&nbsp;&bull;Snapshots do not create extra copies of blocks on the file system. 
-<br>&nbsp;&bull;Snapshots are stored along with the NameNode’s file system namespace.
+<br>&nbsp;&bull; Snapshots do not create extra copies of blocks on the file system. 
+<br>&nbsp;&bull; Snapshots are stored along with the NameNode’s file system namespace.
+<br>
 <br>
 <br><b>Hive - DR Best Practices & Strategies:</b>
 <br>
