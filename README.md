@@ -5,16 +5,18 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br>
 <br>Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-hdfs/HdfsSnapshots.html">HDFS Snapshots</a>:
 <br>&nbsp;&bull; HDFS Snapshots are read-only point-in-time copies of the file system. 
-<br>&nbsp;&bull; Snapshots can be taken on a subtree of the file system or the entire file system.
+<br>&nbsp;&bull; Snapshots can be taken on a subtree of the file system, a file, or the entire file system.
 <br>&nbsp;&bull; Blocks in datanodes are not copied: snapshot files record the block list and file size. There's no data copying
-<br>&nbsp;&bull; Snapshots do not adversely affect regular HDFS operations
+<br>&nbsp;&bull; Snapshots do not adversely affect regular HDFS operations.
+<br>&nbsp;&bull; Incremental snapshots can be taken by doing a diff between two snapshots.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - hdfs snapshotDiff <path> <fromSnapshot> <toSnapshot>
 <br>
 <br>
 <br><b>Hive - DR Best Practices & Strategies:</b>
 <br>
 <br>1.) Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-hdfs/HdfsSnapshots.html">HDFS Snapshots</a> (since Hive is stored in HDFS)
 <br>&nbsp;&bull; Hive data is stored in HDFS, so your HDFS DR strategy could be used for Hive as well. 
-<br>&nbsp;&bull; Use snapshot feature in HDFS to take a point in time image. These snapshots could be for entire file system, a sub-tree in a file system or an individual file. You can also take incremental snapshots by doing a diff between two snapshots.
+<br>&nbsp;&bull; Use snapshot feature in HDFS to take a point in time image. 
 <br>Syntax: hdfs snapshotDiff /path/to/directory_or_file snapshot1 snapshot2
 <br>
 <br>2.) Use <a href="https://hadoop.apache.org/docs/r2.7.3/hadoop-distcp/DistCp.html">Distcp</a> as part of custom pipeline
