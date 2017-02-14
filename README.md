@@ -9,7 +9,7 @@ Resources, tricks, and recommendations for DR (Disaster Recovery) Hadoop cluster
 <br>&nbsp;&bull; Blocks in datanodes are not copied: snapshot files record the block list and file size. There's no data copying
 <br>&nbsp;&bull; Snapshots do not adversely affect regular HDFS operations.
 <br>&nbsp;&bull; Incremental snapshots can be taken by doing a diff between two snapshots.
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - hdfs snapshotDiff /path/to/directory_or_file fromSnapshot toSnapshot
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Syntax:</b> hdfs snapshotDiff /path/to/directory_or_file fromSnapshot toSnapshot
 <br>
 <br>
 <br><b>Hive - DR Best Practices & Strategies:</b>
